@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RenoAssist – AI планировчик за ремонти</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">R</div>
+  <div>
+    <h1>RenoAssist</h1>
+    <span>AI планировчик за ремонти · качете снимки → план, бюджет, ресурси и уроци</span>
+  </div>
+</header>
+
+<main>
+<aside>
+  <div class="card">
+    <h2>1 · Снимки на сградата</h2>
+    <div class="drop" id="drop">📷 Плъзнете снимки тук или докоснете, за да качите<input id="file" type="file" accept="image/*" multiple hidden></div>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="note">Снимките остават във вашия браузър. Отбележете всяка снимка, за да може планът да е насочен към правилната зона.</div>
+  </div>
+
+  <div class="card">
+    <h2>2 · Данни за проекта</h2>
+    <label>Тип сграда</label>
+    <select id="type">
+      <option>Апартамент</option>
+      <option>Къща</option>
+      <option>Стара / историческа сграда</option>
+      <option>Търговски обект</option>
+    </select>
+    <label>Обща площ (м²)</label>
+    <input id="area" type="number" value="80" min="10">
+    <label>Обхват на ремонта</label>
+    <select id="scope">
+      <option value="0">Козметичен ремонт</option>
+      <option value="1" selected>Умерен ремонт</option>
+      <option value="2">Основен ремонт до голи стени</option>
+    </select>
+    <label>Проблеми, които виждате (изберете всички подходящи)</label>
+    <div class="chips" id="issues"></div>
+    <button class="btn" id="go">Генерирай план за ремонт</button>
+  </div>
+
+  <div class="card">
+    <h2>Попитайте асистента</h2>
+    <div class="chat" id="chat">
+      <div class="m a">Здравейте! Питайте ме за влага, електроинсталация, подове, покриви, бюджет… Ще добавя подходящи ръководства и уроци.</div>
+    </div>
+    <div class="cin">
+      <input type="text" id="q" placeholder="напр. Как да премахна влага от стените?">
